@@ -209,18 +209,18 @@
 
     <div class="upload-area" id="upload-area">
       <input type="file" accept="image/*" capture="environment" onchange="handleFileSelect(this)" id="file-input">
-      <div class="upload-icon-wrap">📬</div>
+      <div class="upload-icon-wrap">ð¬</div>
       <div class="upload-title">Photograph your mail</div>
       <div class="upload-sub">Tap to open camera or choose<br>a photo from your library</div>
     </div>
 
     <div class="preview-wrap" id="preview-wrap">
       <img id="preview-img" alt="mail preview">
-      <div class="preview-clear" onclick="clearPreview()">×</div>
+      <div class="preview-clear" onclick="clearPreview()">Ã</div>
     </div>
 
     <div class="or-divider">or</div>
-    <textarea id="mail-text" placeholder="Paste or type the mail content…" rows="4" oninput="checkReady()"></textarea>
+    <textarea id="mail-text" placeholder="Paste or type the mail contentâ¦" rows="4" oninput="checkReady()"></textarea>
     <button class="scan-btn" id="scan-btn" onclick="scanMail()" disabled>Analyze mail</button>
     <div id="scan-result"></div>
     <div style="height:16px;flex-shrink:0"></div>
@@ -233,7 +233,7 @@
         <h3>Your tasks</h3>
         <p id="tasks-subtitle">No pending tasks</p>
       </div>
-      <button class="gen-plan-btn" onclick="generatePlan()">✦ Daily plan</button>
+      <button class="gen-plan-btn" onclick="generatePlan()">â¦ Daily plan</button>
     </div>
     <div id="plan-container"></div>
     <div id="task-list-el" class="task-list"></div>
@@ -248,7 +248,7 @@
   <div class="screen settings-screen" id="screen-settings">
     <div class="settings-section">
       <div class="settings-row">
-        <div class="settings-row-icon" style="background:rgba(90,158,106,.12)">📁</div>
+        <div class="settings-row-icon" style="background:rgba(90,158,106,.12)">ð</div>
         <div class="settings-row-body">
           <div class="settings-row-label">Google Drive folder</div>
           <div class="settings-row-sub" id="folder-setting-sub">Not configured</div>
@@ -258,7 +258,7 @@
         </div>
       </div>
       <div class="settings-row">
-        <div class="settings-row-icon" style="background:rgba(90,158,106,.12)">🔗</div>
+        <div class="settings-row-icon" style="background:rgba(90,158,106,.12)">ð</div>
         <div class="settings-row-body">
           <div class="settings-row-label">Drive connection</div>
           <div class="settings-row-sub" id="drive-connect-sub">Not connected</div>
@@ -271,17 +271,17 @@
 
     <div class="settings-section">
       <div class="settings-row">
-        <div class="settings-row-icon" style="background:rgba(200,169,110,.1)">📄</div>
+        <div class="settings-row-icon" style="background:rgba(200,169,110,.1)">ð</div>
         <div class="settings-row-body">
           <div class="settings-row-label">File naming</div>
-          <div class="settings-row-sub">Files saved as: <em>Vendor — YYYY-MM-DD.pdf</em></div>
+          <div class="settings-row-sub">Files saved as: <em>Vendor â YYYY-MM-DD.pdf</em></div>
         </div>
       </div>
     </div>
 
     <div class="settings-section">
       <div class="settings-row">
-        <div class="settings-row-icon" style="background:rgba(90,140,207,.12)">🔔</div>
+        <div class="settings-row-icon" style="background:rgba(90,140,207,.12)">ð</div>
         <div class="settings-row-body">
           <div class="settings-row-label">Apple Reminders</div>
           <div class="settings-row-sub" id="reminders-sub">Not configured</div>
@@ -291,7 +291,7 @@
         </div>
       </div>
       <div class="settings-row" id="reminders-list-row" style="display:none">
-        <div class="settings-row-icon" style="background:rgba(90,140,207,.08)">📋</div>
+        <div class="settings-row-icon" style="background:rgba(90,140,207,.08)">ð</div>
         <div class="settings-row-body">
           <div class="settings-row-label">Reminders list name</div>
           <input type="text" class="settings-input" id="reminders-list-input" placeholder="e.g. Mail Actions" oninput="saveRemindersSettings()" style="margin-top:6px">
@@ -301,7 +301,7 @@
 
     <div class="settings-section">
       <div class="settings-row">
-        <div class="settings-row-icon" style="background:rgba(212,89,74,.1)">🗑</div>
+        <div class="settings-row-icon" style="background:rgba(212,89,74,.1)">ð</div>
         <div class="settings-row-body">
           <div class="settings-row-label">Clear local data</div>
           <div class="settings-row-sub">Delete all local tasks and archive</div>
@@ -314,7 +314,7 @@
 
     <div style="font-size:12px;color:var(--text3);text-align:center;padding:8px 0;line-height:1.6">
       To connect Drive, you need a free Google Cloud project<br>with OAuth configured.
-      <span style="color:var(--gold);cursor:pointer" onclick="showSetupGuide()"> Setup guide ↗</span>
+      <span style="color:var(--gold);cursor:pointer" onclick="showSetupGuide()"> Setup guide â</span>
     </div>
   </div>
 
@@ -366,15 +366,15 @@
   <div class="modal">
     <div class="modal-handle"></div>
     <div style="font-size:16px;font-weight:500;margin-bottom:4px">Apple Reminders setup</div>
-    <div style="font-size:13px;color:var(--text2);margin-bottom:16px;line-height:1.6">Create a free Shortcut once — then every action item scanned from mail is automatically added to your Reminders list.</div>
+    <div style="font-size:13px;color:var(--text2);margin-bottom:16px;line-height:1.6">Create a free Shortcut once â then every action item scanned from mail is automatically added to your Reminders list.</div>
 
     <div style="display:flex;flex-direction:column;gap:12px">
       <div style="background:var(--surface2);border-radius:12px;padding:14px">
-        <div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:8px;font-weight:500">Step 1 — Create the Shortcut</div>
+        <div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:8px;font-weight:500">Step 1 â Create the Shortcut</div>
         <div style="font-size:13px;color:var(--text2);line-height:1.7">
           1. Open the <strong style="color:var(--text)">Shortcuts</strong> app on your iPhone<br>
           2. Tap <strong style="color:var(--text)">+</strong> to create a new shortcut<br>
-          3. Tap <strong style="color:var(--text)">Add Action</strong> → search <strong style="color:var(--text)">"Add Reminder"</strong><br>
+          3. Tap <strong style="color:var(--text)">Add Action</strong> â search <strong style="color:var(--text)">"Add Reminder"</strong><br>
           4. In the action, set list to your preferred Reminders list<br>
           5. For the reminder title tap <strong style="color:var(--text)">Shortcut Input</strong><br>
           6. Name the shortcut exactly: <strong style="color:var(--text)">Add Mail Reminder</strong>
@@ -382,15 +382,15 @@
       </div>
 
       <div style="background:var(--surface2);border-radius:12px;padding:14px">
-        <div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:8px;font-weight:500">Step 2 — Configure this app</div>
+        <div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:8px;font-weight:500">Step 2 â Configure this app</div>
         <div style="font-size:13px;color:var(--text2);margin-bottom:10px">Enter the name of your Reminders list:</div>
         <input type="text" class="settings-input" id="reminders-list-modal-input" placeholder="e.g. Mail Actions, Reminders, To Do" style="margin-bottom:10px">
-        <button class="settings-btn primary" style="width:100%;padding:11px;font-size:13px" onclick="saveRemindersFromModal()">Save &amp; enable ✓</button>
+        <button class="settings-btn primary" style="width:100%;padding:11px;font-size:13px" onclick="saveRemindersFromModal()">Save &amp; enable â</button>
       </div>
 
       <div style="background:var(--surface2);border-radius:12px;padding:14px">
         <div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin-bottom:6px;font-weight:500">How it works</div>
-        <div style="font-size:12px;color:var(--text3);line-height:1.6">When you scan mail, the app opens your Shortcut with the task text. iOS asks for permission once, then adds it directly to Reminders — including the due date when one is found.</div>
+        <div style="font-size:12px;color:var(--text3);line-height:1.6">When you scan mail, the app opens your Shortcut with the task text. iOS asks for permission once, then adds it directly to Reminders â including the due date when one is found.</div>
       </div>
     </div>
   </div>
@@ -402,9 +402,9 @@
     <div class="modal-handle"></div>
     <div style="font-size:16px;font-weight:500;margin-bottom:14px">Google Drive setup guide</div>
     <div style="font-size:13px;color:var(--text2);line-height:1.7">
-      <p style="margin-bottom:10px"><strong style="color:var(--text)">1. Create a Google Cloud project</strong><br>Go to console.cloud.google.com → New Project</p>
-      <p style="margin-bottom:10px"><strong style="color:var(--text)">2. Enable the Drive API</strong><br>APIs & Services → Library → Search "Google Drive API" → Enable</p>
-      <p style="margin-bottom:10px"><strong style="color:var(--text)">3. Create OAuth credentials</strong><br>APIs & Services → Credentials → Create Credentials → OAuth Client ID → Web Application</p>
+      <p style="margin-bottom:10px"><strong style="color:var(--text)">1. Create a Google Cloud project</strong><br>Go to console.cloud.google.com â New Project</p>
+      <p style="margin-bottom:10px"><strong style="color:var(--text)">2. Enable the Drive API</strong><br>APIs & Services â Library â Search "Google Drive API" â Enable</p>
+      <p style="margin-bottom:10px"><strong style="color:var(--text)">3. Create OAuth credentials</strong><br>APIs & Services â Credentials â Create Credentials â OAuth Client ID â Web Application</p>
       <p style="margin-bottom:10px"><strong style="color:var(--text)">4. Add your app URL</strong><br>Under "Authorized JavaScript origins" add your Netlify/Vercel URL</p>
       <p style="margin-bottom:10px"><strong style="color:var(--text)">5. Copy your Client ID</strong><br>Paste it in the field below and save</p>
       <div style="margin-top:14px;padding-top:14px;border-top:.5px solid var(--border)">
@@ -419,7 +419,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ── State ──
+// ââ State ââ
 let imageBase64 = null;
 let imageFile = null;
 let tasks = [], archive = [];
@@ -429,7 +429,10 @@ let driveFolder = null; // {id, name}
 let gClientId = null;
 let lastScanResult = null;
 
-// ── Persist ──
+// ââ Persist ââ
+function getApiKey() { return localStorage.getItem('ms_api_key') || ''; }
+function saveApiKey(key) { localStorage.setItem('ms_api_key', key.trim()); showToast('API key saved ✓'); renderSettings(); }
+
 function save() {
   try {
     localStorage.setItem('ms_tasks', JSON.stringify(tasks));
@@ -448,7 +451,7 @@ function load() {
   } catch(e) {}
 }
 
-// ── Navigation ──
+// ââ Navigation ââ
 function goScreen(name) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
@@ -460,7 +463,7 @@ function goScreen(name) {
   if (name === 'settings') renderSettings();
 }
 
-// ── Google Drive OAuth ──
+// ââ Google Drive OAuth ââ
 function handleDriveAuth() {
   if (driveToken) { showToast('Already connected to Drive'); return; }
   if (!gClientId) { showSetupGuide(); return; }
@@ -485,7 +488,7 @@ function checkOAuthCallback() {
       driveTokenExpiry = Date.now() + (expiresIn - 60) * 1000;
       history.replaceState(null, '', window.location.pathname);
       updateDriveUI();
-      showToast('Connected to Google Drive ✓');
+      showToast('Connected to Google Drive â');
       if (!driveFolder) openFolderPicker();
     }
   }
@@ -499,7 +502,7 @@ function updateDriveUI() {
   const label = document.getElementById('gdrive-label');
   if (isDriveConnected()) {
     btn.classList.add('connected');
-    label.textContent = driveFolder ? driveFolder.name.substring(0,12) : 'Drive ✓';
+    label.textContent = driveFolder ? driveFolder.name.substring(0,12) : 'Drive â';
   } else {
     btn.classList.remove('connected');
     label.textContent = 'Drive';
@@ -512,37 +515,37 @@ function updateDriveBanner() {
   const el = document.getElementById('drive-scan-banner');
   if (!gClientId) {
     el.innerHTML = `<div class="drive-banner warn">
-      <span style="font-size:20px">📁</span>
+      <span style="font-size:20px">ð</span>
       <div class="drive-banner-text"><strong>Connect Google Drive</strong>Save scanned mail as tagged PDFs</div>
-      <button class="drive-banner-action" onclick="showSetupGuide()">Setup →</button>
+      <button class="drive-banner-action" onclick="showSetupGuide()">Setup â</button>
     </div>`;
   } else if (!isDriveConnected()) {
     el.innerHTML = `<div class="drive-banner warn">
-      <span style="font-size:20px">🔗</span>
+      <span style="font-size:20px">ð</span>
       <div class="drive-banner-text"><strong>Sign in to Drive</strong>Tap to authorize and start saving PDFs</div>
-      <button class="drive-banner-action" onclick="handleDriveAuth()">Connect →</button>
+      <button class="drive-banner-action" onclick="handleDriveAuth()">Connect â</button>
     </div>`;
   } else if (!driveFolder) {
     el.innerHTML = `<div class="drive-banner warn">
-      <span style="font-size:20px">📂</span>
+      <span style="font-size:20px">ð</span>
       <div class="drive-banner-text"><strong>Choose a folder</strong>Select where to save your mail PDFs</div>
-      <button class="drive-banner-action" onclick="openFolderPicker()">Choose →</button>
+      <button class="drive-banner-action" onclick="openFolderPicker()">Choose â</button>
     </div>`;
   } else {
     el.innerHTML = `<div class="drive-banner ok">
-      <span style="font-size:18px">✓</span>
+      <span style="font-size:18px">â</span>
       <div class="drive-banner-text"><strong>Drive ready</strong>Saving to: ${driveFolder.name}</div>
       <button class="drive-banner-action" onclick="openFolderPicker()">Change</button>
     </div>`;
   }
 }
 
-// ── Folder Picker ──
+// ââ Folder Picker ââ
 async function openFolderPicker() {
   if (!isDriveConnected()) { handleDriveAuth(); return; }
   document.getElementById('folder-modal').classList.add('open');
   const el = document.getElementById('folder-list');
-  el.innerHTML = `<div style="padding:20px;text-align:center;color:var(--text3);font-size:13px"><span class="spinner spinner-light"></span> Loading folders…</div>`;
+  el.innerHTML = `<div style="padding:20px;text-align:center;color:var(--text3);font-size:13px"><span class="spinner spinner-light"></span> Loading foldersâ¦</div>`;
 
   try {
     const resp = await fetch(
@@ -559,9 +562,9 @@ async function openFolderPicker() {
 
     el.innerHTML = folders.map(f => `
       <div class="folder-item ${driveFolder?.id === f.id ? 'folder-selected' : ''}" onclick="selectFolder('${f.id}', ${JSON.stringify(f.name).replace(/"/g,'&quot;')})">
-        <span style="font-size:18px">📁</span>
+        <span style="font-size:18px">ð</span>
         <span>${f.name}</span>
-        ${driveFolder?.id === f.id ? '<span style="margin-left:auto;font-size:12px;color:var(--green)">✓ selected</span>' : ''}
+        ${driveFolder?.id === f.id ? '<span style="margin-left:auto;font-size:12px;color:var(--green)">â selected</span>' : ''}
       </div>`).join('');
   } catch(e) {
     el.innerHTML = `<div style="padding:16px;font-size:13px;color:var(--text2)">Could not load folders. Check your Drive connection.</div>`;
@@ -587,15 +590,18 @@ function closeFolderModal(e) {
   if (e.target === document.getElementById('folder-modal')) document.getElementById('folder-modal').classList.remove('open');
 }
 
-// ── Settings ──
+// ââ Settings ââ
 function renderSettings() {
+  const apiKeySub = document.getElementById('apikey-sub');
+  const key = getApiKey();
+  if (apiKeySub) apiKeySub.textContent = key ? 'Set ✓ (ends in ...'+key.slice(-4)+')' : 'Not set — required for mail analysis';
   const folderSub = document.getElementById('folder-setting-sub');
   const connectSub = document.getElementById('drive-connect-sub');
   const connectBtn = document.getElementById('drive-connect-btn');
   const folderBtn = document.getElementById('folder-btn');
 
   if (folderSub) folderSub.textContent = driveFolder ? driveFolder.name : 'Not configured';
-  if (connectSub) connectSub.textContent = isDriveConnected() ? 'Connected ✓' : 'Not connected';
+  if (connectSub) connectSub.textContent = isDriveConnected() ? 'Connected â' : 'Not connected';
   if (connectBtn) { connectBtn.textContent = isDriveConnected() ? 'Reconnect' : 'Connect'; }
   if (folderBtn) folderBtn.textContent = driveFolder ? 'Change' : 'Choose';
 
@@ -635,10 +641,10 @@ function closeGuideModal(e) {
   if (e.target === document.getElementById('guide-modal')) document.getElementById('guide-modal').classList.remove('open');
 }
 
-// ── Image to PDF ──
+// ââ Image to PDF ââ
 function imageToPdfBytes(base64Jpeg, filename) {
   // Minimal valid PDF with the JPEG embedded
-  // We need width/height — we'll use a standard letter size and embed
+  // We need width/height â we'll use a standard letter size and embed
   const imgData = atob(base64Jpeg);
   const imgBytes = new Uint8Array(imgData.length);
   for (let i = 0; i < imgData.length; i++) imgBytes[i] = imgData.charCodeAt(i);
@@ -681,7 +687,7 @@ function imageToPdfBytes(base64Jpeg, filename) {
   const stream = enc.encode(`q\n${pw} 0 0 ${ph} 0 0 cm\n/Im1 Do\nQ\n`);
   addObj(4, `<< /Length ${stream.length} >>\nstream\n${new TextDecoder().decode(stream)}\nendstream`);
 
-  // Image object — needs binary content
+  // Image object â needs binary content
   const imgHdr = enc.encode(`5 0 obj\n<< /Type /XObject /Subtype /Image /Width ${w} /Height ${h} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${imgBytes.length} >>\nstream\n`);
   const imgFtr = enc.encode(`\nendstream\nendobj\n`);
 
@@ -733,7 +739,7 @@ function imageToPdfBytes(base64Jpeg, filename) {
   return pdf;
 }
 
-// ── Upload to Drive ──
+// ââ Upload to Drive ââ
 async function uploadToDrive(pdfBytes, filename) {
   if (!isDriveConnected()) throw new Error('Not connected to Drive');
   if (!driveFolder) throw new Error('No folder selected');
@@ -776,7 +782,7 @@ async function uploadToDrive(pdfBytes, filename) {
   return await resp.json();
 }
 
-// ── File handling ──
+// ââ File handling ââ
 function handleFileSelect(input) {
   const file = input.files[0];
   if (!file) return;
@@ -807,7 +813,7 @@ function checkReady() {
   document.getElementById('scan-btn').disabled = !(hasImage || hasText);
 }
 
-// ── Scan ──
+// ââ Scan ââ
 async function scanMail() {
   const btn = document.getElementById('scan-btn');
   const resultEl = document.getElementById('scan-result');
@@ -815,7 +821,7 @@ async function scanMail() {
   const capturedImage = imageBase64;
 
   btn.disabled = true;
-  btn.innerHTML = '<span class="spinner"></span>Analyzing…';
+  btn.innerHTML = '<span class="spinner"></span>Analyzingâ¦';
   resultEl.innerHTML = '';
 
   const userContent = [];
@@ -893,16 +899,16 @@ function buildFilename(result) {
   const date = result.statement_date ||
     (result.date ? result.date.replace(/[^0-9\-]/g,'').substring(0,10) : null) ||
     new Date().toISOString().substring(0,10);
-  return `${vendor} — ${date}.pdf`;
+  return `${vendor} â ${date}.pdf`;
 }
 
 async function uploadMailToDrive(base64Image, result, archiveId, btnEl) {
   const filename = buildFilename(result);
 
-  if (btnEl) { btnEl.disabled = true; btnEl.textContent = 'Uploading…'; }
+  if (btnEl) { btnEl.disabled = true; btnEl.textContent = 'Uploadingâ¦'; }
 
   const statusEl = document.getElementById('drive-status-' + archiveId);
-  if (statusEl) statusEl.textContent = 'Uploading to Drive…';
+  if (statusEl) statusEl.textContent = 'Uploading to Driveâ¦';
 
   try {
     const pdfBytes = imageToPdfBytes(base64Image, filename);
@@ -915,10 +921,10 @@ async function uploadMailToDrive(base64Image, result, archiveId, btnEl) {
     if (statusEl) {
       statusEl.innerHTML = `<strong>Saved to Drive</strong> ${filename}`;
     }
-    if (btnEl) { btnEl.textContent = '✓ Saved'; btnEl.classList.add('done'); btnEl.disabled = true; }
+    if (btnEl) { btnEl.textContent = 'â Saved'; btnEl.classList.add('done'); btnEl.disabled = true; }
     showToast('Saved to Drive: ' + filename);
   } catch(e) {
-    if (statusEl) statusEl.textContent = 'Drive upload failed — tap to retry';
+    if (statusEl) statusEl.textContent = 'Drive upload failed â tap to retry';
     if (btnEl) { btnEl.disabled = false; btnEl.textContent = 'Retry'; }
     console.error('Drive upload error:', e);
   }
@@ -944,13 +950,13 @@ function renderResult(r, container, archiveId) {
         </div>`).join('')}
     </div>`;
   } else {
-    actionsHtml = `<div class="result-actions"><div class="no-actions">No action required — informational only.</div></div>`;
+    actionsHtml = `<div class="result-actions"><div class="no-actions">No action required â informational only.</div></div>`;
   }
 
   let driveRow = '';
   if (driveReady) {
     driveRow = `<div class="drive-upload-row">
-      <div class="drive-upload-status" id="drive-status-${archiveId}">Saving <strong>${filename}</strong> to Drive…</div>
+      <div class="drive-upload-status" id="drive-status-${archiveId}">Saving <strong>${filename}</strong> to Driveâ¦</div>
     </div>`;
   } else if (gClientId) {
     driveRow = `<div class="drive-upload-row">
@@ -983,10 +989,10 @@ function renderResult(r, container, archiveId) {
 function addTaskFromResult(i, action, source) {
   addTask(action, source);
   const btn = document.getElementById('radd' + i);
-  if (btn) { btn.textContent = '✓ added'; btn.classList.add('added'); btn.disabled = true; }
+  if (btn) { btn.textContent = 'â added'; btn.classList.add('added'); btn.disabled = true; }
 }
 
-// ── Apple Reminders via Shortcuts ──
+// ââ Apple Reminders via Shortcuts ââ
 let remindersEnabled = false;
 let remindersListName = 'Reminders';
 
@@ -1011,7 +1017,7 @@ function saveRemindersFromModal() {
   localStorage.setItem('ms_reminders', JSON.stringify({ enabled: true, listName: remindersListName }));
   document.getElementById('reminders-modal').classList.remove('open');
   updateRemindersUI();
-  showToast('Reminders enabled ✓');
+  showToast('Reminders enabled â');
 }
 
 function updateRemindersUI() {
@@ -1019,7 +1025,7 @@ function updateRemindersUI() {
   const btn = document.getElementById('reminders-btn');
   const listRow = document.getElementById('reminders-list-row');
   const listInput = document.getElementById('reminders-list-input');
-  if (sub) sub.textContent = remindersEnabled ? `Active · List: ${remindersListName}` : 'Not configured';
+  if (sub) sub.textContent = remindersEnabled ? `Active Â· List: ${remindersListName}` : 'Not configured';
   if (btn) btn.textContent = remindersEnabled ? 'Edit' : 'Setup';
   if (listRow) listRow.style.display = remindersEnabled ? 'flex' : 'none';
   if (listInput) listInput.value = remindersListName;
@@ -1036,7 +1042,7 @@ function closeRemindersModal(e) {
 
 function sendToReminders(taskText, dueDate, source) {
   if (!remindersEnabled) return;
-  // Build a clean note: "Task — Source" + due date hint for the Shortcut to parse
+  // Build a clean note: "Task â Source" + due date hint for the Shortcut to parse
   let input = taskText;
   if (source) input += ` [${source}]`;
   if (dueDate) input += ` (due: ${dueDate})`;
@@ -1047,7 +1053,7 @@ function sendToReminders(taskText, dueDate, source) {
   window.location.href = url;
 }
 
-// ── Tasks ──
+// ââ Tasks ââ
 function addTask(action, source, silent) {
   tasks.push({ id: Date.now() + Math.random(), text: action.task, due: action.due || null, urgent: !!action.urgent, source: source || 'Mail', done: false, addedAt: new Date().toISOString() });
   save(); updateBadge();
@@ -1055,7 +1061,7 @@ function addTask(action, source, silent) {
   if (currentScreen === 'tasks') renderTasks();
   // Send to Apple Reminders via Shortcut
   if (remindersEnabled) {
-    // Small delay so multiple tasks don't fire simultaneously — queue them
+    // Small delay so multiple tasks don't fire simultaneously â queue them
     const delay = silent ? (Math.random() * 800) : 0;
     setTimeout(() => sendToReminders(action.task, action.due, source), delay);
   }
@@ -1066,9 +1072,9 @@ function deleteTask(id) { tasks = tasks.filter(t => String(t.id) !== String(id))
 function renderTasks() {
   const el = document.getElementById('task-list-el');
   const pending = tasks.filter(t => !t.done), done = tasks.filter(t => t.done);
-  document.getElementById('tasks-subtitle').textContent = pending.length === 0 ? 'No pending tasks' : `${pending.length} pending · ${done.length} done`;
+  document.getElementById('tasks-subtitle').textContent = pending.length === 0 ? 'No pending tasks' : `${pending.length} pending Â· ${done.length} done`;
   updateBadge();
-  if (!tasks.length) { el.innerHTML = `<div class="empty-state"><div class="empty-icon">📋</div><div class="empty-text">No tasks yet.<br>Scan mail to add actions automatically.</div></div>`; return; }
+  if (!tasks.length) { el.innerHTML = `<div class="empty-state"><div class="empty-icon">ð</div><div class="empty-text">No tasks yet.<br>Scan mail to add actions automatically.</div></div>`; return; }
   const sorted = [...pending.sort((a,b) => (b.urgent?1:0)-(a.urgent?1:0)), ...done];
   el.innerHTML = sorted.map(t => `
     <div class="task-item">
@@ -1081,8 +1087,8 @@ function renderTasks() {
           ${t.urgent && !t.done ? '<span class="due-tag due-urgent">urgent</span>' : ''}
         </div>
       </div>
-      ${remindersEnabled && !t.done ? `<button class="task-del" title="Send to Reminders" onclick="sendToReminders(${JSON.stringify(t.text).replace(/"/g,'&quot;')},'${(t.due||'').replace(/'/g,"\\'")}','${(t.source||'').replace(/'/g,"\\'")}');showToast('Opening Reminders…')" style="font-size:14px">🔔</button>` : ''}
-      <button class="task-del" onclick="deleteTask('${t.id}')">×</button>
+      ${remindersEnabled && !t.done ? `<button class="task-del" title="Send to Reminders" onclick="sendToReminders(${JSON.stringify(t.text).replace(/"/g,'&quot;')},'${(t.due||'').replace(/'/g,"\\'")}','${(t.source||'').replace(/'/g,"\\'")}');showToast('Opening Remindersâ¦')" style="font-size:14px">ð</button>` : ''}
+      <button class="task-del" onclick="deleteTask('${t.id}')">Ã</button>
     </div>`).join('');
 }
 
@@ -1096,29 +1102,29 @@ async function generatePlan() {
   const container = document.getElementById('plan-container');
   const pending = tasks.filter(t => !t.done);
   if (!pending.length) { showToast('No pending tasks'); return; }
-  container.innerHTML = `<div style="padding:14px 20px;font-size:13px;color:var(--text3);display:flex;align-items:center;gap:8px"><span class="spinner spinner-light"></span>Generating plan…</div>`;
-  const taskList = pending.map(t => `- ${t.text}${t.due?` (due: ${t.due})`:''} ${t.urgent?'[URGENT]':''} — ${t.source}`).join('\n');
+  container.innerHTML = `<div style="padding:14px 20px;font-size:13px;color:var(--text3);display:flex;align-items:center;gap:8px"><span class="spinner spinner-light"></span>Generating planâ¦</div>`;
+  const taskList = pending.map(t => `- ${t.text}${t.due?` (due: ${t.due})`:''} ${t.urgent?'[URGENT]':''} â ${t.source}`).join('\n');
   try {
     const resp = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      method: 'POST', headers: { 'Content-Type': 'application/json', 'x-api-key': getApiKey(), 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' },
       body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 600,
         system: 'You are a concise personal assistant. Plain text only, no markdown.',
         messages: [{ role: 'user', content: `My pending mail tasks:\n\n${taskList}\n\nWrite a brief actionable daily plan under 180 words. Prioritize urgent items.` }] })
     });
     const data = await resp.json();
     const text = data.content?.map(c => c.text || '').join('') || '';
-    container.innerHTML = `<div class="plan-box"><div class="plan-label">✦ Today's plan</div>${text}</div>`;
+    container.innerHTML = `<div class="plan-box"><div class="plan-label">â¦ Today's plan</div>${text}</div>`;
   } catch(e) { container.innerHTML = ''; showToast('Could not generate plan'); }
 }
 
-// ── Archive ──
+// ââ Archive ââ
 function renderArchive() {
   const el = document.getElementById('archive-list-el');
-  if (!archive.length) { el.innerHTML = `<div class="empty-state"><div class="empty-icon">📂</div><div class="empty-text">No scanned mail yet.</div></div>`; return; }
-  const icons = { bill:'💳', legal:'⚖️', financial:'💰', marketing:'📢', government:'🏛️', insurance:'🛡️', medical:'🏥', other:'📄' };
+  if (!archive.length) { el.innerHTML = `<div class="empty-state"><div class="empty-icon">ð</div><div class="empty-text">No scanned mail yet.</div></div>`; return; }
+  const icons = { bill:'ð³', legal:'âï¸', financial:'ð°', marketing:'ð¢', government:'ðï¸', insurance:'ð¡ï¸', medical:'ð¥', other:'ð' };
   el.innerHTML = archive.map(m => `
     <div class="archive-item" onclick="showArchiveItem(${m.id})">
-      <div class="archive-icon">${icons[m.type]||'📄'}</div>
+      <div class="archive-icon">${icons[m.type]||'ð'}</div>
       <div class="archive-content">
         <div class="archive-sender">${m.sender||'Unknown'}</div>
         <div class="archive-desc">${m.subject||m.summary||''}</div>
@@ -1126,7 +1132,7 @@ function renderArchive() {
           <span class="archive-date">${m.scannedAt}</span>
           ${m.statement_date ? `<span class="archive-date">${m.statement_date}</span>` : ''}
           ${m.amount ? `<span class="due-tag due-normal">${m.amount}</span>` : ''}
-          ${m.driveFileId ? `<span class="drive-saved-tag">Drive ✓</span>` : ''}
+          ${m.driveFileId ? `<span class="drive-saved-tag">Drive â</span>` : ''}
           ${m.deadline ? `<span class="due-tag due-urgent">Due ${m.deadline}</span>` : ''}
         </div>
       </div>
@@ -1146,7 +1152,7 @@ function showArchiveItem(id) {
     <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px">
       <div>
         <div style="font-size:17px;font-weight:500">${item.sender||'Unknown'}</div>
-        <div style="font-size:12px;color:var(--text3);margin-top:3px">${item.scannedAt}${item.statement_date?' · '+item.statement_date:''} · ${item.type}</div>
+        <div style="font-size:12px;color:var(--text3);margin-top:3px">${item.scannedAt}${item.statement_date?' Â· '+item.statement_date:''} Â· ${item.type}</div>
       </div>
       <span class="urgency-chip ${uc}">${item.urgency}</span>
     </div>
@@ -1157,17 +1163,17 @@ function showArchiveItem(id) {
       ${item.deadline ? `<div><div class="meta-label" style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px">Due</div><div style="font-size:14px;font-weight:500;color:var(--red)">${item.deadline}</div></div>` : ''}
     </div>` : ''}
     ${item.driveFileId ? `<div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(90,158,106,.08);border:0.5px solid rgba(90,158,106,.2);border-radius:10px;margin-bottom:12px;font-size:13px;color:#7abf8a">
-      <span>✓ Saved to Drive</span>
+      <span>â Saved to Drive</span>
       <span style="flex:1;color:var(--text3);font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${item.driveFileName||filename}</span>
-      ${item.driveLink ? `<a href="${item.driveLink}" style="color:var(--blue);font-size:12px;text-decoration:none" target="_blank">Open ↗</a>` : ''}
+      ${item.driveLink ? `<a href="${item.driveLink}" style="color:var(--blue);font-size:12px;text-decoration:none" target="_blank">Open â</a>` : ''}
     </div>` : ''}
-    ${canUpload ? `<button class="upload-drive-btn" style="width:100%;padding:10px;margin-bottom:12px;font-size:13px" id="modal-upload-btn" onclick="uploadMailToDrive('${item.image}',${JSON.stringify(item).replace(/'/g,"\\'")},'${item.id}',document.getElementById('modal-upload-btn'))">Upload PDF to Drive — ${filename}</button>` : ''}
+    ${canUpload ? `<button class="upload-drive-btn" style="width:100%;padding:10px;margin-bottom:12px;font-size:13px" id="modal-upload-btn" onclick="uploadMailToDrive('${item.image}',${JSON.stringify(item).replace(/'/g,"\\'")},'${item.id}',document.getElementById('modal-upload-btn'))">Upload PDF to Drive â ${filename}</button>` : ''}
     ${item.actions?.length ? `<div style="border-top:.5px solid var(--border);padding-top:12px">
       <div style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px">Actions</div>
       ${item.actions.map((a,i) => `
         <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:.5px solid var(--border)">
           <div style="font-size:14px;flex:1">${a.task}${a.due?`<div style="font-size:11px;color:var(--text3);margin-top:2px">${a.due}</div>`:''}</div>
-          <button class="add-btn" onclick="addTask(${JSON.stringify(a).replace(/"/g,'&quot;')},'${(item.sender||'').replace(/'/g,"\\'")}');this.textContent='✓';this.classList.add('added');this.disabled=true">+ tasks</button>
+          <button class="add-btn" onclick="addTask(${JSON.stringify(a).replace(/"/g,'&quot;')},'${(item.sender||'').replace(/'/g,"\\'")}');this.textContent='â';this.classList.add('added');this.disabled=true">+ tasks</button>
         </div>`).join('')}
     </div>` : ''}`;
 
@@ -1178,14 +1184,14 @@ function closeModal(e) {
   if (e.target === document.getElementById('archive-modal')) document.getElementById('archive-modal').classList.remove('open');
 }
 
-// ── Toast ──
+// ââ Toast ââ
 function showToast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg; t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), 2200);
 }
 
-// ── Init ──
+// ââ Init ââ
 load();
 loadRemindersSettings();
 renderTasks();

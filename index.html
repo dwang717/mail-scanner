@@ -209,18 +209,18 @@
 
     <div class="upload-area" id="upload-area">
       <input type="file" accept="image/*" capture="environment" onchange="handleFileSelect(this)" id="file-input">
-      <div class="upload-icon-wrap">Ã°ÂÂÂ¬</div>
+      <div class="upload-icon-wrap">ÃÂ°ÃÂÃÂÃÂ¬</div>
       <div class="upload-title">Photograph your mail</div>
       <div class="upload-sub">Tap to open camera or choose<br>a photo from your library</div>
     </div>
 
     <div class="preview-wrap" id="preview-wrap">
       <img id="preview-img" alt="mail preview">
-      <div class="preview-clear" onclick="clearPreview()">ÃÂ</div>
+      <div class="preview-clear" onclick="clearPreview()">ÃÂÃÂ</div>
     </div>
 
     <div class="or-divider">or</div>
-    <textarea id="mail-text" placeholder="Paste or type the mail contentÃ¢ÂÂ¦" rows="4" oninput="checkReady()"></textarea>
+    <textarea id="mail-text" placeholder="Paste or type the mail contentÃÂ¢ÃÂÃÂ¦" rows="4" oninput="checkReady()"></textarea>
     <button class="scan-btn" id="scan-btn" onclick="scanMail()" disabled>Analyze mail</button>
     <div id="scan-result"></div>
     <div style="height:16px;flex-shrink:0"></div>
@@ -233,7 +233,7 @@
         <h3>Your tasks</h3>
         <p id="tasks-subtitle">No pending tasks</p>
       </div>
-      <button class="gen-plan-btn" onclick="generatePlan()">Ã¢ÂÂ¦ Daily plan</button>
+      <button class="gen-plan-btn" onclick="generatePlan()">ÃÂ¢ÃÂÃÂ¦ Daily plan</button>
     </div>
     <div id="plan-container"></div>
     <div id="task-list-el" class="task-list"></div>
@@ -248,7 +248,21 @@
   <div class="screen settings-screen" id="screen-settings">
     <div class="settings-section">
       <div class="settings-row">
-        <div class="settings-row-icon" style="background:rgba(90,158,106,.12)">Ã°ÂÂÂ</div>
+        <div class="settings-row-icon" style="background:rgba(200,169,110,.1)">🔑</div>
+        <div class="settings-row-body">
+          <div class="settings-row-label">Anthropic API key</div>
+          <div class="settings-row-sub" id="apikey-sub">Not set</div>
+          <input type="password" class="settings-input" id="apikey-input" placeholder="sk-ant-..." style="margin-top:8px">
+        </div>
+        <div class="settings-row-action">
+          <button class="settings-btn primary" onclick="saveApiKey(document.getElementById('apikey-input').value)">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <div class="settings-row">
+        <div class="settings-row-icon" style="background:rgba(90,158,106,.12)">ÃÂ°ÃÂÃÂÃÂ</div>
         <div class="settings-row-body">
           <div class="settings-row-label">Google Drive folder</div>
           <div class="settings-row-sub" id="folder-setting-sub">Not configured</div>
@@ -258,7 +272,7 @@
         </div>
       </div>
       <div class="settings-row">
-        <div class="settings-row-icon" style="background:rgba(90,158,106,.12)">Ã°ÂÂÂ</div>
+        <div class="settings-row-icon" style="background:rgba(90,158,106,.12)">ÃÂ°ÃÂÃÂÃÂ</div>
         <div class="settings-row-body">
           <div class="settings-row-label">Drive connection</div>
           <div class="settings-row-sub" id="drive-connect-sub">Not connected</div>
@@ -271,17 +285,17 @@
 
     <div class="settings-section">
       <div class="settings-row">
-        <div class="settings-row-icon" style="background:rgba(200,169,110,.1)">Ã°ÂÂÂ</div>
+        <div class="settings-row-icon" style="background:rgba(200,169,110,.1)">ÃÂ°ÃÂÃÂÃÂ</div>
         <div class="settings-row-body">
           <div class="settings-row-label">File naming</div>
-          <div class="settings-row-sub">Files saved as: <em>Vendor Ã¢ÂÂ YYYY-MM-DD.pdf</em></div>
+          <div class="settings-row-sub">Files saved as: <em>Vendor ÃÂ¢ÃÂÃÂ YYYY-MM-DD.pdf</em></div>
         </div>
       </div>
     </div>
 
     <div class="settings-section">
       <div class="settings-row">
-        <div class="settings-row-icon" style="background:rgba(90,140,207,.12)">Ã°ÂÂÂ</div>
+        <div class="settings-row-icon" style="background:rgba(90,140,207,.12)">ÃÂ°ÃÂÃÂÃÂ</div>
         <div class="settings-row-body">
           <div class="settings-row-label">Apple Reminders</div>
           <div class="settings-row-sub" id="reminders-sub">Not configured</div>
@@ -291,7 +305,7 @@
         </div>
       </div>
       <div class="settings-row" id="reminders-list-row" style="display:none">
-        <div class="settings-row-icon" style="background:rgba(90,140,207,.08)">Ã°ÂÂÂ</div>
+        <div class="settings-row-icon" style="background:rgba(90,140,207,.08)">ÃÂ°ÃÂÃÂÃÂ</div>
         <div class="settings-row-body">
           <div class="settings-row-label">Reminders list name</div>
           <input type="text" class="settings-input" id="reminders-list-input" placeholder="e.g. Mail Actions" oninput="saveRemindersSettings()" style="margin-top:6px">
@@ -301,7 +315,7 @@
 
     <div class="settings-section">
       <div class="settings-row">
-        <div class="settings-row-icon" style="background:rgba(212,89,74,.1)">Ã°ÂÂÂ</div>
+        <div class="settings-row-icon" style="background:rgba(212,89,74,.1)">ÃÂ°ÃÂÃÂÃÂ</div>
         <div class="settings-row-body">
           <div class="settings-row-label">Clear local data</div>
           <div class="settings-row-sub">Delete all local tasks and archive</div>
@@ -314,7 +328,7 @@
 
     <div style="font-size:12px;color:var(--text3);text-align:center;padding:8px 0;line-height:1.6">
       To connect Drive, you need a free Google Cloud project<br>with OAuth configured.
-      <span style="color:var(--gold);cursor:pointer" onclick="showSetupGuide()"> Setup guide Ã¢ÂÂ</span>
+      <span style="color:var(--gold);cursor:pointer" onclick="showSetupGuide()"> Setup guide ÃÂ¢ÃÂÃÂ</span>
     </div>
   </div>
 
@@ -366,15 +380,15 @@
   <div class="modal">
     <div class="modal-handle"></div>
     <div style="font-size:16px;font-weight:500;margin-bottom:4px">Apple Reminders setup</div>
-    <div style="font-size:13px;color:var(--text2);margin-bottom:16px;line-height:1.6">Create a free Shortcut once Ã¢ÂÂ then every action item scanned from mail is automatically added to your Reminders list.</div>
+    <div style="font-size:13px;color:var(--text2);margin-bottom:16px;line-height:1.6">Create a free Shortcut once ÃÂ¢ÃÂÃÂ then every action item scanned from mail is automatically added to your Reminders list.</div>
 
     <div style="display:flex;flex-direction:column;gap:12px">
       <div style="background:var(--surface2);border-radius:12px;padding:14px">
-        <div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:8px;font-weight:500">Step 1 Ã¢ÂÂ Create the Shortcut</div>
+        <div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:8px;font-weight:500">Step 1 ÃÂ¢ÃÂÃÂ Create the Shortcut</div>
         <div style="font-size:13px;color:var(--text2);line-height:1.7">
           1. Open the <strong style="color:var(--text)">Shortcuts</strong> app on your iPhone<br>
           2. Tap <strong style="color:var(--text)">+</strong> to create a new shortcut<br>
-          3. Tap <strong style="color:var(--text)">Add Action</strong> Ã¢ÂÂ search <strong style="color:var(--text)">"Add Reminder"</strong><br>
+          3. Tap <strong style="color:var(--text)">Add Action</strong> ÃÂ¢ÃÂÃÂ search <strong style="color:var(--text)">"Add Reminder"</strong><br>
           4. In the action, set list to your preferred Reminders list<br>
           5. For the reminder title tap <strong style="color:var(--text)">Shortcut Input</strong><br>
           6. Name the shortcut exactly: <strong style="color:var(--text)">Add Mail Reminder</strong>
@@ -382,15 +396,15 @@
       </div>
 
       <div style="background:var(--surface2);border-radius:12px;padding:14px">
-        <div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:8px;font-weight:500">Step 2 Ã¢ÂÂ Configure this app</div>
+        <div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:8px;font-weight:500">Step 2 ÃÂ¢ÃÂÃÂ Configure this app</div>
         <div style="font-size:13px;color:var(--text2);margin-bottom:10px">Enter the name of your Reminders list:</div>
         <input type="text" class="settings-input" id="reminders-list-modal-input" placeholder="e.g. Mail Actions, Reminders, To Do" style="margin-bottom:10px">
-        <button class="settings-btn primary" style="width:100%;padding:11px;font-size:13px" onclick="saveRemindersFromModal()">Save &amp; enable Ã¢ÂÂ</button>
+        <button class="settings-btn primary" style="width:100%;padding:11px;font-size:13px" onclick="saveRemindersFromModal()">Save &amp; enable ÃÂ¢ÃÂÃÂ</button>
       </div>
 
       <div style="background:var(--surface2);border-radius:12px;padding:14px">
         <div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin-bottom:6px;font-weight:500">How it works</div>
-        <div style="font-size:12px;color:var(--text3);line-height:1.6">When you scan mail, the app opens your Shortcut with the task text. iOS asks for permission once, then adds it directly to Reminders Ã¢ÂÂ including the due date when one is found.</div>
+        <div style="font-size:12px;color:var(--text3);line-height:1.6">When you scan mail, the app opens your Shortcut with the task text. iOS asks for permission once, then adds it directly to Reminders ÃÂ¢ÃÂÃÂ including the due date when one is found.</div>
       </div>
     </div>
   </div>
@@ -402,9 +416,9 @@
     <div class="modal-handle"></div>
     <div style="font-size:16px;font-weight:500;margin-bottom:14px">Google Drive setup guide</div>
     <div style="font-size:13px;color:var(--text2);line-height:1.7">
-      <p style="margin-bottom:10px"><strong style="color:var(--text)">1. Create a Google Cloud project</strong><br>Go to console.cloud.google.com Ã¢ÂÂ New Project</p>
-      <p style="margin-bottom:10px"><strong style="color:var(--text)">2. Enable the Drive API</strong><br>APIs & Services Ã¢ÂÂ Library Ã¢ÂÂ Search "Google Drive API" Ã¢ÂÂ Enable</p>
-      <p style="margin-bottom:10px"><strong style="color:var(--text)">3. Create OAuth credentials</strong><br>APIs & Services Ã¢ÂÂ Credentials Ã¢ÂÂ Create Credentials Ã¢ÂÂ OAuth Client ID Ã¢ÂÂ Web Application</p>
+      <p style="margin-bottom:10px"><strong style="color:var(--text)">1. Create a Google Cloud project</strong><br>Go to console.cloud.google.com ÃÂ¢ÃÂÃÂ New Project</p>
+      <p style="margin-bottom:10px"><strong style="color:var(--text)">2. Enable the Drive API</strong><br>APIs & Services ÃÂ¢ÃÂÃÂ Library ÃÂ¢ÃÂÃÂ Search "Google Drive API" ÃÂ¢ÃÂÃÂ Enable</p>
+      <p style="margin-bottom:10px"><strong style="color:var(--text)">3. Create OAuth credentials</strong><br>APIs & Services ÃÂ¢ÃÂÃÂ Credentials ÃÂ¢ÃÂÃÂ Create Credentials ÃÂ¢ÃÂÃÂ OAuth Client ID ÃÂ¢ÃÂÃÂ Web Application</p>
       <p style="margin-bottom:10px"><strong style="color:var(--text)">4. Add your app URL</strong><br>Under "Authorized JavaScript origins" add your Netlify/Vercel URL</p>
       <p style="margin-bottom:10px"><strong style="color:var(--text)">5. Copy your Client ID</strong><br>Paste it in the field below and save</p>
       <div style="margin-top:14px;padding-top:14px;border-top:.5px solid var(--border)">
@@ -419,7 +433,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// Ã¢ÂÂÃ¢ÂÂ State Ã¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ State ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 let imageBase64 = null;
 let imageFile = null;
 let tasks = [], archive = [];
@@ -429,9 +443,9 @@ let driveFolder = null; // {id, name}
 let gClientId = null;
 let lastScanResult = null;
 
-// Ã¢ÂÂÃ¢ÂÂ Persist Ã¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ Persist ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 function getApiKey() { return localStorage.getItem('ms_api_key') || ''; }
-function saveApiKey(key) { localStorage.setItem('ms_api_key', key.trim()); showToast('API key saved â'); renderSettings(); }
+function saveApiKey(key) { localStorage.setItem('ms_api_key', key.trim()); showToast('API key saved Ã¢ÂÂ'); renderSettings(); }
 
 function save() {
   try {
@@ -451,7 +465,7 @@ function load() {
   } catch(e) {}
 }
 
-// Ã¢ÂÂÃ¢ÂÂ Navigation Ã¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ Navigation ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 function goScreen(name) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
@@ -463,7 +477,7 @@ function goScreen(name) {
   if (name === 'settings') renderSettings();
 }
 
-// Ã¢ÂÂÃ¢ÂÂ Google Drive OAuth Ã¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ Google Drive OAuth ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 function handleDriveAuth() {
   if (driveToken) { showToast('Already connected to Drive'); return; }
   if (!gClientId) { showSetupGuide(); return; }
@@ -488,7 +502,7 @@ function checkOAuthCallback() {
       driveTokenExpiry = Date.now() + (expiresIn - 60) * 1000;
       history.replaceState(null, '', window.location.pathname);
       updateDriveUI();
-      showToast('Connected to Google Drive Ã¢ÂÂ');
+      showToast('Connected to Google Drive ÃÂ¢ÃÂÃÂ');
       if (!driveFolder) openFolderPicker();
     }
   }
@@ -502,7 +516,7 @@ function updateDriveUI() {
   const label = document.getElementById('gdrive-label');
   if (isDriveConnected()) {
     btn.classList.add('connected');
-    label.textContent = driveFolder ? driveFolder.name.substring(0,12) : 'Drive Ã¢ÂÂ';
+    label.textContent = driveFolder ? driveFolder.name.substring(0,12) : 'Drive ÃÂ¢ÃÂÃÂ';
   } else {
     btn.classList.remove('connected');
     label.textContent = 'Drive';
@@ -515,37 +529,37 @@ function updateDriveBanner() {
   const el = document.getElementById('drive-scan-banner');
   if (!gClientId) {
     el.innerHTML = `<div class="drive-banner warn">
-      <span style="font-size:20px">Ã°ÂÂÂ</span>
+      <span style="font-size:20px">ÃÂ°ÃÂÃÂÃÂ</span>
       <div class="drive-banner-text"><strong>Connect Google Drive</strong>Save scanned mail as tagged PDFs</div>
-      <button class="drive-banner-action" onclick="showSetupGuide()">Setup Ã¢ÂÂ</button>
+      <button class="drive-banner-action" onclick="showSetupGuide()">Setup ÃÂ¢ÃÂÃÂ</button>
     </div>`;
   } else if (!isDriveConnected()) {
     el.innerHTML = `<div class="drive-banner warn">
-      <span style="font-size:20px">Ã°ÂÂÂ</span>
+      <span style="font-size:20px">ÃÂ°ÃÂÃÂÃÂ</span>
       <div class="drive-banner-text"><strong>Sign in to Drive</strong>Tap to authorize and start saving PDFs</div>
-      <button class="drive-banner-action" onclick="handleDriveAuth()">Connect Ã¢ÂÂ</button>
+      <button class="drive-banner-action" onclick="handleDriveAuth()">Connect ÃÂ¢ÃÂÃÂ</button>
     </div>`;
   } else if (!driveFolder) {
     el.innerHTML = `<div class="drive-banner warn">
-      <span style="font-size:20px">Ã°ÂÂÂ</span>
+      <span style="font-size:20px">ÃÂ°ÃÂÃÂÃÂ</span>
       <div class="drive-banner-text"><strong>Choose a folder</strong>Select where to save your mail PDFs</div>
-      <button class="drive-banner-action" onclick="openFolderPicker()">Choose Ã¢ÂÂ</button>
+      <button class="drive-banner-action" onclick="openFolderPicker()">Choose ÃÂ¢ÃÂÃÂ</button>
     </div>`;
   } else {
     el.innerHTML = `<div class="drive-banner ok">
-      <span style="font-size:18px">Ã¢ÂÂ</span>
+      <span style="font-size:18px">ÃÂ¢ÃÂÃÂ</span>
       <div class="drive-banner-text"><strong>Drive ready</strong>Saving to: ${driveFolder.name}</div>
       <button class="drive-banner-action" onclick="openFolderPicker()">Change</button>
     </div>`;
   }
 }
 
-// Ã¢ÂÂÃ¢ÂÂ Folder Picker Ã¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ Folder Picker ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 async function openFolderPicker() {
   if (!isDriveConnected()) { handleDriveAuth(); return; }
   document.getElementById('folder-modal').classList.add('open');
   const el = document.getElementById('folder-list');
-  el.innerHTML = `<div style="padding:20px;text-align:center;color:var(--text3);font-size:13px"><span class="spinner spinner-light"></span> Loading foldersÃ¢ÂÂ¦</div>`;
+  el.innerHTML = `<div style="padding:20px;text-align:center;color:var(--text3);font-size:13px"><span class="spinner spinner-light"></span> Loading foldersÃÂ¢ÃÂÃÂ¦</div>`;
 
   try {
     const resp = await fetch(
@@ -562,9 +576,9 @@ async function openFolderPicker() {
 
     el.innerHTML = folders.map(f => `
       <div class="folder-item ${driveFolder?.id === f.id ? 'folder-selected' : ''}" onclick="selectFolder('${f.id}', ${JSON.stringify(f.name).replace(/"/g,'&quot;')})">
-        <span style="font-size:18px">Ã°ÂÂÂ</span>
+        <span style="font-size:18px">ÃÂ°ÃÂÃÂÃÂ</span>
         <span>${f.name}</span>
-        ${driveFolder?.id === f.id ? '<span style="margin-left:auto;font-size:12px;color:var(--green)">Ã¢ÂÂ selected</span>' : ''}
+        ${driveFolder?.id === f.id ? '<span style="margin-left:auto;font-size:12px;color:var(--green)">ÃÂ¢ÃÂÃÂ selected</span>' : ''}
       </div>`).join('');
   } catch(e) {
     el.innerHTML = `<div style="padding:16px;font-size:13px;color:var(--text2)">Could not load folders. Check your Drive connection.</div>`;
@@ -590,21 +604,21 @@ function closeFolderModal(e) {
   if (e.target === document.getElementById('folder-modal')) document.getElementById('folder-modal').classList.remove('open');
 }
 
-// Ã¢ÂÂÃ¢ÂÂ Settings Ã¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ Settings ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 function renderSettings() {
   const apiKeySub = document.getElementById('apikey-sub');
   const key = getApiKey();
-  if (apiKeySub) apiKeySub.textContent = key ? 'Set ✓ (ends ...'+key.slice(-4)+')' : 'Not set — required for mail analysis';
+  if (apiKeySub) apiKeySub.textContent = key ? 'Set â (ends ...'+key.slice(-4)+')' : 'Not set â required for mail analysis';
   const apiKeySub = document.getElementById('apikey-sub');
   const key = getApiKey();
-  if (apiKeySub) apiKeySub.textContent = key ? 'Set â (ends in ...'+key.slice(-4)+')' : 'Not set â required for mail analysis';
+  if (apiKeySub) apiKeySub.textContent = key ? 'Set Ã¢ÂÂ (ends in ...'+key.slice(-4)+')' : 'Not set Ã¢ÂÂ required for mail analysis';
   const folderSub = document.getElementById('folder-setting-sub');
   const connectSub = document.getElementById('drive-connect-sub');
   const connectBtn = document.getElementById('drive-connect-btn');
   const folderBtn = document.getElementById('folder-btn');
 
   if (folderSub) folderSub.textContent = driveFolder ? driveFolder.name : 'Not configured';
-  if (connectSub) connectSub.textContent = isDriveConnected() ? 'Connected Ã¢ÂÂ' : 'Not connected';
+  if (connectSub) connectSub.textContent = isDriveConnected() ? 'Connected ÃÂ¢ÃÂÃÂ' : 'Not connected';
   if (connectBtn) { connectBtn.textContent = isDriveConnected() ? 'Reconnect' : 'Connect'; }
   if (folderBtn) folderBtn.textContent = driveFolder ? 'Change' : 'Choose';
 
@@ -644,10 +658,10 @@ function closeGuideModal(e) {
   if (e.target === document.getElementById('guide-modal')) document.getElementById('guide-modal').classList.remove('open');
 }
 
-// Ã¢ÂÂÃ¢ÂÂ Image to PDF Ã¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ Image to PDF ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 function imageToPdfBytes(base64Jpeg, filename) {
   // Minimal valid PDF with the JPEG embedded
-  // We need width/height Ã¢ÂÂ we'll use a standard letter size and embed
+  // We need width/height ÃÂ¢ÃÂÃÂ we'll use a standard letter size and embed
   const imgData = atob(base64Jpeg);
   const imgBytes = new Uint8Array(imgData.length);
   for (let i = 0; i < imgData.length; i++) imgBytes[i] = imgData.charCodeAt(i);
@@ -690,7 +704,7 @@ function imageToPdfBytes(base64Jpeg, filename) {
   const stream = enc.encode(`q\n${pw} 0 0 ${ph} 0 0 cm\n/Im1 Do\nQ\n`);
   addObj(4, `<< /Length ${stream.length} >>\nstream\n${new TextDecoder().decode(stream)}\nendstream`);
 
-  // Image object Ã¢ÂÂ needs binary content
+  // Image object ÃÂ¢ÃÂÃÂ needs binary content
   const imgHdr = enc.encode(`5 0 obj\n<< /Type /XObject /Subtype /Image /Width ${w} /Height ${h} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${imgBytes.length} >>\nstream\n`);
   const imgFtr = enc.encode(`\nendstream\nendobj\n`);
 
@@ -742,7 +756,7 @@ function imageToPdfBytes(base64Jpeg, filename) {
   return pdf;
 }
 
-// Ã¢ÂÂÃ¢ÂÂ Upload to Drive Ã¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ Upload to Drive ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 async function uploadToDrive(pdfBytes, filename) {
   if (!isDriveConnected()) throw new Error('Not connected to Drive');
   if (!driveFolder) throw new Error('No folder selected');
@@ -785,7 +799,7 @@ async function uploadToDrive(pdfBytes, filename) {
   return await resp.json();
 }
 
-// Ã¢ÂÂÃ¢ÂÂ File handling Ã¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ File handling ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 function handleFileSelect(input) {
   const file = input.files[0];
   if (!file) return;
@@ -816,7 +830,7 @@ function checkReady() {
   document.getElementById('scan-btn').disabled = !(hasImage || hasText);
 }
 
-// Ã¢ÂÂÃ¢ÂÂ Scan Ã¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ Scan ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 async function scanMail() {
   const btn = document.getElementById('scan-btn');
   const resultEl = document.getElementById('scan-result');
@@ -824,7 +838,7 @@ async function scanMail() {
   const capturedImage = imageBase64;
 
   btn.disabled = true;
-  btn.innerHTML = '<span class="spinner"></span>AnalyzingÃ¢ÂÂ¦';
+  btn.innerHTML = '<span class="spinner"></span>AnalyzingÃÂ¢ÃÂÃÂ¦';
   resultEl.innerHTML = '';
 
   const userContent = [];
@@ -902,16 +916,16 @@ function buildFilename(result) {
   const date = result.statement_date ||
     (result.date ? result.date.replace(/[^0-9\-]/g,'').substring(0,10) : null) ||
     new Date().toISOString().substring(0,10);
-  return `${vendor} Ã¢ÂÂ ${date}.pdf`;
+  return `${vendor} ÃÂ¢ÃÂÃÂ ${date}.pdf`;
 }
 
 async function uploadMailToDrive(base64Image, result, archiveId, btnEl) {
   const filename = buildFilename(result);
 
-  if (btnEl) { btnEl.disabled = true; btnEl.textContent = 'UploadingÃ¢ÂÂ¦'; }
+  if (btnEl) { btnEl.disabled = true; btnEl.textContent = 'UploadingÃÂ¢ÃÂÃÂ¦'; }
 
   const statusEl = document.getElementById('drive-status-' + archiveId);
-  if (statusEl) statusEl.textContent = 'Uploading to DriveÃ¢ÂÂ¦';
+  if (statusEl) statusEl.textContent = 'Uploading to DriveÃÂ¢ÃÂÃÂ¦';
 
   try {
     const pdfBytes = imageToPdfBytes(base64Image, filename);
@@ -924,10 +938,10 @@ async function uploadMailToDrive(base64Image, result, archiveId, btnEl) {
     if (statusEl) {
       statusEl.innerHTML = `<strong>Saved to Drive</strong> ${filename}`;
     }
-    if (btnEl) { btnEl.textContent = 'Ã¢ÂÂ Saved'; btnEl.classList.add('done'); btnEl.disabled = true; }
+    if (btnEl) { btnEl.textContent = 'ÃÂ¢ÃÂÃÂ Saved'; btnEl.classList.add('done'); btnEl.disabled = true; }
     showToast('Saved to Drive: ' + filename);
   } catch(e) {
-    if (statusEl) statusEl.textContent = 'Drive upload failed Ã¢ÂÂ tap to retry';
+    if (statusEl) statusEl.textContent = 'Drive upload failed ÃÂ¢ÃÂÃÂ tap to retry';
     if (btnEl) { btnEl.disabled = false; btnEl.textContent = 'Retry'; }
     console.error('Drive upload error:', e);
   }
@@ -953,13 +967,13 @@ function renderResult(r, container, archiveId) {
         </div>`).join('')}
     </div>`;
   } else {
-    actionsHtml = `<div class="result-actions"><div class="no-actions">No action required Ã¢ÂÂ informational only.</div></div>`;
+    actionsHtml = `<div class="result-actions"><div class="no-actions">No action required ÃÂ¢ÃÂÃÂ informational only.</div></div>`;
   }
 
   let driveRow = '';
   if (driveReady) {
     driveRow = `<div class="drive-upload-row">
-      <div class="drive-upload-status" id="drive-status-${archiveId}">Saving <strong>${filename}</strong> to DriveÃ¢ÂÂ¦</div>
+      <div class="drive-upload-status" id="drive-status-${archiveId}">Saving <strong>${filename}</strong> to DriveÃÂ¢ÃÂÃÂ¦</div>
     </div>`;
   } else if (gClientId) {
     driveRow = `<div class="drive-upload-row">
@@ -992,10 +1006,10 @@ function renderResult(r, container, archiveId) {
 function addTaskFromResult(i, action, source) {
   addTask(action, source);
   const btn = document.getElementById('radd' + i);
-  if (btn) { btn.textContent = 'Ã¢ÂÂ added'; btn.classList.add('added'); btn.disabled = true; }
+  if (btn) { btn.textContent = 'ÃÂ¢ÃÂÃÂ added'; btn.classList.add('added'); btn.disabled = true; }
 }
 
-// Ã¢ÂÂÃ¢ÂÂ Apple Reminders via Shortcuts Ã¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ Apple Reminders via Shortcuts ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 let remindersEnabled = false;
 let remindersListName = 'Reminders';
 
@@ -1020,7 +1034,7 @@ function saveRemindersFromModal() {
   localStorage.setItem('ms_reminders', JSON.stringify({ enabled: true, listName: remindersListName }));
   document.getElementById('reminders-modal').classList.remove('open');
   updateRemindersUI();
-  showToast('Reminders enabled Ã¢ÂÂ');
+  showToast('Reminders enabled ÃÂ¢ÃÂÃÂ');
 }
 
 function updateRemindersUI() {
@@ -1028,7 +1042,7 @@ function updateRemindersUI() {
   const btn = document.getElementById('reminders-btn');
   const listRow = document.getElementById('reminders-list-row');
   const listInput = document.getElementById('reminders-list-input');
-  if (sub) sub.textContent = remindersEnabled ? `Active ÃÂ· List: ${remindersListName}` : 'Not configured';
+  if (sub) sub.textContent = remindersEnabled ? `Active ÃÂÃÂ· List: ${remindersListName}` : 'Not configured';
   if (btn) btn.textContent = remindersEnabled ? 'Edit' : 'Setup';
   if (listRow) listRow.style.display = remindersEnabled ? 'flex' : 'none';
   if (listInput) listInput.value = remindersListName;
@@ -1045,7 +1059,7 @@ function closeRemindersModal(e) {
 
 function sendToReminders(taskText, dueDate, source) {
   if (!remindersEnabled) return;
-  // Build a clean note: "Task Ã¢ÂÂ Source" + due date hint for the Shortcut to parse
+  // Build a clean note: "Task ÃÂ¢ÃÂÃÂ Source" + due date hint for the Shortcut to parse
   let input = taskText;
   if (source) input += ` [${source}]`;
   if (dueDate) input += ` (due: ${dueDate})`;
@@ -1056,7 +1070,7 @@ function sendToReminders(taskText, dueDate, source) {
   window.location.href = url;
 }
 
-// Ã¢ÂÂÃ¢ÂÂ Tasks Ã¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ Tasks ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 function addTask(action, source, silent) {
   tasks.push({ id: Date.now() + Math.random(), text: action.task, due: action.due || null, urgent: !!action.urgent, source: source || 'Mail', done: false, addedAt: new Date().toISOString() });
   save(); updateBadge();
@@ -1064,7 +1078,7 @@ function addTask(action, source, silent) {
   if (currentScreen === 'tasks') renderTasks();
   // Send to Apple Reminders via Shortcut
   if (remindersEnabled) {
-    // Small delay so multiple tasks don't fire simultaneously Ã¢ÂÂ queue them
+    // Small delay so multiple tasks don't fire simultaneously ÃÂ¢ÃÂÃÂ queue them
     const delay = silent ? (Math.random() * 800) : 0;
     setTimeout(() => sendToReminders(action.task, action.due, source), delay);
   }
@@ -1075,9 +1089,9 @@ function deleteTask(id) { tasks = tasks.filter(t => String(t.id) !== String(id))
 function renderTasks() {
   const el = document.getElementById('task-list-el');
   const pending = tasks.filter(t => !t.done), done = tasks.filter(t => t.done);
-  document.getElementById('tasks-subtitle').textContent = pending.length === 0 ? 'No pending tasks' : `${pending.length} pending ÃÂ· ${done.length} done`;
+  document.getElementById('tasks-subtitle').textContent = pending.length === 0 ? 'No pending tasks' : `${pending.length} pending ÃÂÃÂ· ${done.length} done`;
   updateBadge();
-  if (!tasks.length) { el.innerHTML = `<div class="empty-state"><div class="empty-icon">Ã°ÂÂÂ</div><div class="empty-text">No tasks yet.<br>Scan mail to add actions automatically.</div></div>`; return; }
+  if (!tasks.length) { el.innerHTML = `<div class="empty-state"><div class="empty-icon">ÃÂ°ÃÂÃÂÃÂ</div><div class="empty-text">No tasks yet.<br>Scan mail to add actions automatically.</div></div>`; return; }
   const sorted = [...pending.sort((a,b) => (b.urgent?1:0)-(a.urgent?1:0)), ...done];
   el.innerHTML = sorted.map(t => `
     <div class="task-item">
@@ -1090,8 +1104,8 @@ function renderTasks() {
           ${t.urgent && !t.done ? '<span class="due-tag due-urgent">urgent</span>' : ''}
         </div>
       </div>
-      ${remindersEnabled && !t.done ? `<button class="task-del" title="Send to Reminders" onclick="sendToReminders(${JSON.stringify(t.text).replace(/"/g,'&quot;')},'${(t.due||'').replace(/'/g,"\\'")}','${(t.source||'').replace(/'/g,"\\'")}');showToast('Opening RemindersÃ¢ÂÂ¦')" style="font-size:14px">Ã°ÂÂÂ</button>` : ''}
-      <button class="task-del" onclick="deleteTask('${t.id}')">ÃÂ</button>
+      ${remindersEnabled && !t.done ? `<button class="task-del" title="Send to Reminders" onclick="sendToReminders(${JSON.stringify(t.text).replace(/"/g,'&quot;')},'${(t.due||'').replace(/'/g,"\\'")}','${(t.source||'').replace(/'/g,"\\'")}');showToast('Opening RemindersÃÂ¢ÃÂÃÂ¦')" style="font-size:14px">ÃÂ°ÃÂÃÂÃÂ</button>` : ''}
+      <button class="task-del" onclick="deleteTask('${t.id}')">ÃÂÃÂ</button>
     </div>`).join('');
 }
 
@@ -1105,8 +1119,8 @@ async function generatePlan() {
   const container = document.getElementById('plan-container');
   const pending = tasks.filter(t => !t.done);
   if (!pending.length) { showToast('No pending tasks'); return; }
-  container.innerHTML = `<div style="padding:14px 20px;font-size:13px;color:var(--text3);display:flex;align-items:center;gap:8px"><span class="spinner spinner-light"></span>Generating planÃ¢ÂÂ¦</div>`;
-  const taskList = pending.map(t => `- ${t.text}${t.due?` (due: ${t.due})`:''} ${t.urgent?'[URGENT]':''} Ã¢ÂÂ ${t.source}`).join('\n');
+  container.innerHTML = `<div style="padding:14px 20px;font-size:13px;color:var(--text3);display:flex;align-items:center;gap:8px"><span class="spinner spinner-light"></span>Generating planÃÂ¢ÃÂÃÂ¦</div>`;
+  const taskList = pending.map(t => `- ${t.text}${t.due?` (due: ${t.due})`:''} ${t.urgent?'[URGENT]':''} ÃÂ¢ÃÂÃÂ ${t.source}`).join('\n');
   try {
     const resp = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST', headers: { 'Content-Type': 'application/json', 'x-api-key': getApiKey(), 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' },
@@ -1116,18 +1130,18 @@ async function generatePlan() {
     });
     const data = await resp.json();
     const text = data.content?.map(c => c.text || '').join('') || '';
-    container.innerHTML = `<div class="plan-box"><div class="plan-label">Ã¢ÂÂ¦ Today's plan</div>${text}</div>`;
+    container.innerHTML = `<div class="plan-box"><div class="plan-label">ÃÂ¢ÃÂÃÂ¦ Today's plan</div>${text}</div>`;
   } catch(e) { container.innerHTML = ''; showToast('Could not generate plan'); }
 }
 
-// Ã¢ÂÂÃ¢ÂÂ Archive Ã¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ Archive ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 function renderArchive() {
   const el = document.getElementById('archive-list-el');
-  if (!archive.length) { el.innerHTML = `<div class="empty-state"><div class="empty-icon">Ã°ÂÂÂ</div><div class="empty-text">No scanned mail yet.</div></div>`; return; }
-  const icons = { bill:'Ã°ÂÂÂ³', legal:'Ã¢ÂÂÃ¯Â¸Â', financial:'Ã°ÂÂÂ°', marketing:'Ã°ÂÂÂ¢', government:'Ã°ÂÂÂÃ¯Â¸Â', insurance:'Ã°ÂÂÂ¡Ã¯Â¸Â', medical:'Ã°ÂÂÂ¥', other:'Ã°ÂÂÂ' };
+  if (!archive.length) { el.innerHTML = `<div class="empty-state"><div class="empty-icon">ÃÂ°ÃÂÃÂÃÂ</div><div class="empty-text">No scanned mail yet.</div></div>`; return; }
+  const icons = { bill:'ÃÂ°ÃÂÃÂÃÂ³', legal:'ÃÂ¢ÃÂÃÂÃÂ¯ÃÂ¸ÃÂ', financial:'ÃÂ°ÃÂÃÂÃÂ°', marketing:'ÃÂ°ÃÂÃÂÃÂ¢', government:'ÃÂ°ÃÂÃÂÃÂÃÂ¯ÃÂ¸ÃÂ', insurance:'ÃÂ°ÃÂÃÂÃÂ¡ÃÂ¯ÃÂ¸ÃÂ', medical:'ÃÂ°ÃÂÃÂÃÂ¥', other:'ÃÂ°ÃÂÃÂÃÂ' };
   el.innerHTML = archive.map(m => `
     <div class="archive-item" onclick="showArchiveItem(${m.id})">
-      <div class="archive-icon">${icons[m.type]||'Ã°ÂÂÂ'}</div>
+      <div class="archive-icon">${icons[m.type]||'ÃÂ°ÃÂÃÂÃÂ'}</div>
       <div class="archive-content">
         <div class="archive-sender">${m.sender||'Unknown'}</div>
         <div class="archive-desc">${m.subject||m.summary||''}</div>
@@ -1135,7 +1149,7 @@ function renderArchive() {
           <span class="archive-date">${m.scannedAt}</span>
           ${m.statement_date ? `<span class="archive-date">${m.statement_date}</span>` : ''}
           ${m.amount ? `<span class="due-tag due-normal">${m.amount}</span>` : ''}
-          ${m.driveFileId ? `<span class="drive-saved-tag">Drive Ã¢ÂÂ</span>` : ''}
+          ${m.driveFileId ? `<span class="drive-saved-tag">Drive ÃÂ¢ÃÂÃÂ</span>` : ''}
           ${m.deadline ? `<span class="due-tag due-urgent">Due ${m.deadline}</span>` : ''}
         </div>
       </div>
@@ -1155,7 +1169,7 @@ function showArchiveItem(id) {
     <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px">
       <div>
         <div style="font-size:17px;font-weight:500">${item.sender||'Unknown'}</div>
-        <div style="font-size:12px;color:var(--text3);margin-top:3px">${item.scannedAt}${item.statement_date?' ÃÂ· '+item.statement_date:''} ÃÂ· ${item.type}</div>
+        <div style="font-size:12px;color:var(--text3);margin-top:3px">${item.scannedAt}${item.statement_date?' ÃÂÃÂ· '+item.statement_date:''} ÃÂÃÂ· ${item.type}</div>
       </div>
       <span class="urgency-chip ${uc}">${item.urgency}</span>
     </div>
@@ -1166,17 +1180,17 @@ function showArchiveItem(id) {
       ${item.deadline ? `<div><div class="meta-label" style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px">Due</div><div style="font-size:14px;font-weight:500;color:var(--red)">${item.deadline}</div></div>` : ''}
     </div>` : ''}
     ${item.driveFileId ? `<div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(90,158,106,.08);border:0.5px solid rgba(90,158,106,.2);border-radius:10px;margin-bottom:12px;font-size:13px;color:#7abf8a">
-      <span>Ã¢ÂÂ Saved to Drive</span>
+      <span>ÃÂ¢ÃÂÃÂ Saved to Drive</span>
       <span style="flex:1;color:var(--text3);font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${item.driveFileName||filename}</span>
-      ${item.driveLink ? `<a href="${item.driveLink}" style="color:var(--blue);font-size:12px;text-decoration:none" target="_blank">Open Ã¢ÂÂ</a>` : ''}
+      ${item.driveLink ? `<a href="${item.driveLink}" style="color:var(--blue);font-size:12px;text-decoration:none" target="_blank">Open ÃÂ¢ÃÂÃÂ</a>` : ''}
     </div>` : ''}
-    ${canUpload ? `<button class="upload-drive-btn" style="width:100%;padding:10px;margin-bottom:12px;font-size:13px" id="modal-upload-btn" onclick="uploadMailToDrive('${item.image}',${JSON.stringify(item).replace(/'/g,"\\'")},'${item.id}',document.getElementById('modal-upload-btn'))">Upload PDF to Drive Ã¢ÂÂ ${filename}</button>` : ''}
+    ${canUpload ? `<button class="upload-drive-btn" style="width:100%;padding:10px;margin-bottom:12px;font-size:13px" id="modal-upload-btn" onclick="uploadMailToDrive('${item.image}',${JSON.stringify(item).replace(/'/g,"\\'")},'${item.id}',document.getElementById('modal-upload-btn'))">Upload PDF to Drive ÃÂ¢ÃÂÃÂ ${filename}</button>` : ''}
     ${item.actions?.length ? `<div style="border-top:.5px solid var(--border);padding-top:12px">
       <div style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px">Actions</div>
       ${item.actions.map((a,i) => `
         <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:.5px solid var(--border)">
           <div style="font-size:14px;flex:1">${a.task}${a.due?`<div style="font-size:11px;color:var(--text3);margin-top:2px">${a.due}</div>`:''}</div>
-          <button class="add-btn" onclick="addTask(${JSON.stringify(a).replace(/"/g,'&quot;')},'${(item.sender||'').replace(/'/g,"\\'")}');this.textContent='Ã¢ÂÂ';this.classList.add('added');this.disabled=true">+ tasks</button>
+          <button class="add-btn" onclick="addTask(${JSON.stringify(a).replace(/"/g,'&quot;')},'${(item.sender||'').replace(/'/g,"\\'")}');this.textContent='ÃÂ¢ÃÂÃÂ';this.classList.add('added');this.disabled=true">+ tasks</button>
         </div>`).join('')}
     </div>` : ''}`;
 
@@ -1187,14 +1201,14 @@ function closeModal(e) {
   if (e.target === document.getElementById('archive-modal')) document.getElementById('archive-modal').classList.remove('open');
 }
 
-// Ã¢ÂÂÃ¢ÂÂ Toast Ã¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ Toast ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 function showToast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg; t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), 2200);
 }
 
-// Ã¢ÂÂÃ¢ÂÂ Init Ã¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ Init ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 load();
 loadRemindersSettings();
 renderTasks();
